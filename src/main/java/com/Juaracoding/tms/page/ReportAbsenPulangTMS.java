@@ -16,6 +16,11 @@ public class ReportAbsenPulangTMS {
         PageFactory.initElements(driver,this);
     }
 
+
+    @FindBy(xpath = "//a[normalize-space()='Log Out']")
+    WebElement btnLogout;
+    @FindBy(xpath = "//span[normalize-space()='Admin TMS']")
+    WebElement btnPofile;
     @FindBy(xpath = "//div[@id='sidebar']/div/div/ul/li[7]/a/span")
     WebElement btnReportAbsen;
     @FindBy(xpath = "//*[@id='sidebar']/div/div[1]/ul/li[7]/ul/li[2]/a")
@@ -23,6 +28,10 @@ public class ReportAbsenPulangTMS {
     @FindBy(xpath ="//*[@id='content']/div[1]/div/div/div[1]/h4")
     WebElement txtJudulAbsenPulang;
 
+    public void logOut(){
+        btnPofile.click();
+        btnLogout.click();
+    }
     public void goToAbsenPulang(){
         btnReportAbsen.click();
         btnAbsenPulang.click();

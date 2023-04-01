@@ -13,6 +13,8 @@ public class LoginPageTMS {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(xpath = "//*[@id=\"page-wrapper\"]/div/div[2]/div/center")
+    WebElement txtStaffSuccesLogin;
     @FindBy(xpath = "//*[@id=\"page-container\"]/div/div[1]")
     WebElement txtError;
 
@@ -28,6 +30,9 @@ public class LoginPageTMS {
     @FindBy(xpath = "(//h1[normalize-space()='Dashboard'])[1]")
     WebElement txtDashboard;
 
+    public String getTxtSuccesLoginStaff(){
+        return txtStaffSuccesLogin.getText();
+    }
     public String setTxtError(){
         return txtError.getText();
     }

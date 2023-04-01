@@ -86,4 +86,5 @@ Feature: Report Absen Pulang
     And Admin input valid unit
     And Admin input over end date
     And Admin click button export data
-    Then Admin back to proveous page
+    And Admin back to proveous page
+    Then Admin logout

@@ -4,6 +4,7 @@ import com.Juaracoding.tms.page.LoginPageTMS;
 import com.Juaracoding.tms.utils.Constants;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import com.relevantcodes.extentreports.model.Log;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -39,8 +40,8 @@ public class TestLogin {
         extentTest.log(LogStatus.PASS,"User enter valid password");
     }
 
-    @And("Admin click button login")
-    public void admin_click_button_login(){
+    @And("User click button login")
+    public void user_click_button_login(){
         loginPage.buttonLogin();
         extentTest.log(LogStatus.PASS,"User click button login");
     }
@@ -61,5 +62,25 @@ public class TestLogin {
         extentTest.log(LogStatus.PASS,"Admin get message error");
         System.out.println(loginPage.setTxtError());
         Hooks.delay(1);
+    }
+
+    //login staff
+    @When("Staff enter valid username")
+    public void staff_enter_valid_username(){
+        extentTest.log(LogStatus.PASS,"Staff enter valid username");
+        loginPage.enterUsername("D6220258");
+    }
+
+    @And("Staff enter valid password")
+    public void staff_enter_valid_password(){
+        extentTest.log(LogStatus.PASS,"Staff enter valid password");
+        loginPage.enterPassword("1993-11-12");
+    }
+
+    @Then("Staff go to dashboard")
+    public void staff_go_to_dashboard(){
+        extentTest.log(LogStatus.PASS,"Staff go to dashboard");
+        Hooks.delay(Constants.DETIK);
+        Assert.assertTrue(loginPage.getTxtSuccesLoginStaff().contains("Selamat datang"));
     }
 }

@@ -31,4 +31,10 @@ public class TestReportAbsenPulang {
         Hooks.delay(Constants.DETIK);
     }
 
+    @Then("Admin logout")
+    public void admin_logout(){
+        extentTest.log(LogStatus.PASS,"Admin logout");
+        rapTms.logOut();
+    }
+
 }

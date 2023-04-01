@@ -27,7 +27,12 @@ public enum TestScenarios {
     T18("Admin not input data start date fail download report absen pulang"),
     T19("Admin not input data end date fail download report absen pulang"),
     T20("Admin input data start date and end date over 31 days"),
-    T21("Admin not input data start date and input data start date (over)");
+    T21("Admin not input data start date and input data start date (over)"),
+
+    //Laporan Kegiatan
+    T22("Staff successful login into web TMS"),
+    T23("Staff go to page laporan kegiatan absen masuk"),
+    T24("Staff input laporan kegiatan absen masuk");
     private String testCaseName;
     TestScenarios(String value){
         testCaseName = value;
