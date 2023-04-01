@@ -45,10 +45,21 @@ public class TestLogin {
         extentTest.log(LogStatus.PASS,"User click button login");
     }
 
+
     @Then("Admin go to page Dashboard")
     public void admin_go_to_page_Dashboard(){
         Hooks.delay(1);
         Assert.assertEquals(loginPage.getTxtDashboard(),"Dashboard");
         extentTest.log(LogStatus.PASS,"User go to page Dashboard");
+    }
+
+
+    @Then("Admin get message error")
+    public void admin_get_message_error(){
+        Assert.assertEquals(loginPage.setTxtError(),"×\n" +
+                "Wrong username or password..!");
+        extentTest.log(LogStatus.PASS,"Admin get message error");
+        System.out.println(loginPage.setTxtError());
+        Hooks.delay(1);
     }
 }

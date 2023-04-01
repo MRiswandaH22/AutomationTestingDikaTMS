@@ -13,6 +13,9 @@ public class LoginPageTMS {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(xpath = "//*[@id=\"page-container\"]/div/div[1]")
+    WebElement txtError;
+
     @FindBy(xpath = "(//input[@placeholder='NIK'])[1]")
     WebElement username;
 
@@ -24,6 +27,10 @@ public class LoginPageTMS {
 
     @FindBy(xpath = "(//h1[normalize-space()='Dashboard'])[1]")
     WebElement txtDashboard;
+
+    public String setTxtError(){
+        return txtError.getText();
+    }
 
     public void enterUsername(String username){
         this.username.sendKeys(username);

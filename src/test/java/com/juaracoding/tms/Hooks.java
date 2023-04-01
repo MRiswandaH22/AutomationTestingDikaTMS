@@ -9,8 +9,13 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Hooks {
 
@@ -26,6 +31,7 @@ public class Hooks {
         TestScenarios[] test = TestScenarios.values();
         extentTest = reports.startTest(test[Utils.testCount].getTestCaseName());
         Utils.testCount++;
+
     }
     @After
     public void endTestCase() {
