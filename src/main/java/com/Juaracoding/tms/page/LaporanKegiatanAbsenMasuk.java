@@ -16,6 +16,8 @@ public class LaporanKegiatanAbsenMasuk {
         PageFactory.initElements(driver,this);
     }
 
+    @FindBy(xpath = "/html/body/p")
+    WebElement txtFilePDF;
     //input absen masuk
 
     @FindBy(xpath = "//input[@value='Submit']")
@@ -51,6 +53,33 @@ public class LaporanKegiatanAbsenMasuk {
     @FindBy(xpath = "//a[@class='back']")
     WebElement btnBackAllert;
 
+    //validation message (invalid)
+
+    public String getValidtionMessageFotoSelfiePDF(){
+        return txtFilePDF.getText();
+    }
+    public String getValidationMessageFotoSelfie(){
+        String msg1 = driver.findElement(By.xpath("//input[@id='file']")).getAttribute("validationMessage");
+        return msg1;
+    }
+    public String getValidationMessageDivisi(){
+        String msg2 = driver.findElement(By.id("divisi")).getAttribute("validationMessage");
+        return msg2;
+    }
+    public String getValidationMessageTipeShift(){
+        String msg3 = driver.findElement(By.id("type_shift")).getAttribute("validationMessage");
+        return msg3;
+    }
+    public String getValidationMessageNamaShift(){
+        String msg4 = driver.findElement(By.xpath("//select[@id='shift_name']")).getAttribute("validationMessage");
+        return msg4;
+    }
+    public String getValidationMessageTipeAbsen(){
+        String msg5 = driver.findElement(By.id("absen_type")).getAttribute("validationMessage");
+        return msg5;
+
+        //Please select an item in the list. (dropdown), yg foto selfie belum
+    }
 
     public void setBtnBackAllert(){
         btnBackAllert.click();

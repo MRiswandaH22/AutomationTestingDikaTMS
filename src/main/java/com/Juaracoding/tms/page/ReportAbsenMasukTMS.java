@@ -57,6 +57,7 @@ public class ReportAbsenMasukTMS {
     @FindBy(xpath = "//div[@id='sidebar']/div/div/ul/li[7]/ul/li/a")
     WebElement btnAbsenMasuk;
 
+
     public String getAllert() {
         Alert alert = driver.switchTo().alert();
         String textAlert = alert.getText();
